@@ -18,7 +18,7 @@ if ($_POST && isset($_POST['assign_meal'])) {
     $catering_id = $_POST['catering_id'];
     
     // Get meal price and catering people count
-    $meal_query = $conn->query("SELECT `Pricing List` as price FROM meal WHERE Meal_ID = $meal_id");
+    $meal_query = $conn->query("SELECT `Pricing` as price FROM meal WHERE Meal_ID = $meal_id");
     $catering_query = $conn->query("SELECT Number_of_People FROM catering_services WHERE Catering_ID = $catering_id");
     
     if ($meal_query->num_rows > 0 && $catering_query->num_rows > 0) {
@@ -303,4 +303,5 @@ $available_meals = $conn->query("SELECT * FROM meal ORDER BY Cuisine, Name");
         </div>
     </div>
 </body>
+
 </html>
