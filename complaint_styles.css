@@ -1,0 +1,145 @@
+/* ------------------- Complaint Dashboard Header ------------------- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* ------------------- Complaint Card ------------------- */
+.complaint-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+.complaint-card:hover {
+    transform: translateY(-3px);
+}
+.complaint-card.no-hover:hover {
+    transform: none;
+}
+.complaint-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+}
+.complaint-meta {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* ------------------- Status Badges ------------------- */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.status-pending {
+    background-color: #17a2b8;  /* Open */
+}
+.status-inprogress {
+    background-color: #ffc107;  /* In Progress */
+}
+.status-resolved {
+    background-color: #28a745;  /* Resolved */
+}
+.status-rejected {
+    background-color: #6c757d;  /* Closed/Rejected */
+}
+
+/* Admin reply badge */
+.status-badge.replied {
+    font-size: 12px;
+    background-color: #28a745;
+    margin-left: 5px;
+}
+
+/* ------------------- Buttons inside cards ------------------- */
+.card-actions {
+    margin-top: 10px;
+}
+.card-actions a,
+.card-actions button {
+    margin-right: 8px;
+    text-decoration: none;
+}
+.btn.small {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn.small:hover {
+    background: #0056b3;
+}
+.btn.small.danger {
+    background: #dc3545;
+}
+.btn.small.danger:hover {
+    background: #a71d2a;
+}
+
+/* ------------------- Form Cards (Add/Edit/View) ------------------- */
+.complaint-card.form-narrow {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+#description {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ------------------- No Data Message ------------------- */
+.no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* ------------------- View Complaint Card ------------------- */
+.view-card {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.view-card h2 {
+    margin-bottom: 15px;
+}
+.view-card h3.section-title {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+.view-card p {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}

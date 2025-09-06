@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #FFF8EE; /* lily */
+  color: #953029; /* hibiscus */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #953029; /* hibiscus */
+  color: #FFF8EE;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar nav a {
+  color: #FFF8EE;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar nav a:hover {
+  color: #E2A48A; /* desert rose */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #D6877F, #E2A48A); /* rosewood → desert rose */
+  color: #0a0a0a;
+}
+
+.hero-art {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin: 30px 0;
+}
+
+.btn {
+  background: #c53f30; /* rosewood */
+  color: #FFF8EE; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #BA5448; /* dahlia */
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.meal-card {
+  border: 2px solid #E2A48A; /* desert rose */
+  border-radius: 10px;
+  padding: 15px;
+  background: #FFF; /* keep light so text is readable */
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(149, 48, 41, 0.15);
+}
+
+.meal-card h3 {
+  margin-top: 0;
+  color: #953029; /* hibiscus */
+}
+
+.price {
+  font-weight: bold;
+  color: #913d33; /* dahlia */
+}
+
+.meal-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #E2A48A; /* desert rose */
+}

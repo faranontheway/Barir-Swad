@@ -1,0 +1,210 @@
+/* cook_styles.css */
+
+/* General body and font */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(170deg, #fff8ee 0%, #BA5448 100%);
+}
+
+/* Header and navbar */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.logo {
+    font-family: 'DynaPuff', cursive, sans-serif;
+    font-weight: 700;          /* bold but smooth */
+    font-size: 30px;
+    color: #953029;            /* peony color */
+    letter-spacing: 1px;       /* subtle spacing */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15); /* soft depth */
+    transition: transform 0.3s;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.nav-links a:hover { background: #f8f9fa; }
+.nav-links .btn { background: #953029; color: white; }
+.nav-links .btn:hover { background: #ce1e1e; }
+.nav-links .logout { background: #953029; }
+.nav-links .logout:hover { background: #ce1e1e; }
+
+/* Container for page content */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Welcome section */
+.welcome-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.welcome-section h1 { color: #333; margin-bottom: 10px; }
+.welcome-section p { color: #666; font-size: 18px; }
+
+/* Buttons */
+.btn, button {
+    background: #953029;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover, button:hover { background: #ce1e1e; }
+
+/* Quick actions */
+.quick-actions { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+
+/* Stats grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); }
+.stat-card h3 { color: #140101; font-size: 15px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
+.stat-card .number { font-size: 36px; font-weight: bold; color: #953029; }
+.stat-card.money .number { color: #02771d; }
+
+/* Meal grid */
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.meal-card {
+    background: #FFF8EE;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.meal-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.meal-card h4 { color: #333; margin-bottom: 0px; font-size: 20px;}
+.meal-cuisine { background: #953029; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-bottom: 10px; display: inline-block; }
+.meal-price { color: #02771d; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+
+/* Meal action buttons */
+.btn-action {
+    background: #D6877F;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 3px;
+    display: inline-block;
+}
+.btn-action:hover { background: #ce1e1e; }
+.btn-delete { background: #dc3545; }
+.btn-delete:hover { background: #ce1e1e; }
+
+/* Form styling */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.message { text-align:center; margin-bottom:10px; color:green; }
+
+
+/* Form container (Add Meal, Edit Meal, etc.) */
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-container button {
+    margin-top: 20px;
+    background: #953029;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.form-container button:hover { background: #ce1e1e; }
+
+/* Complaint list styling */
+.complaint-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+    background-color: #fff;
+}
+.complaint-item:hover { background: #f8f9fa; }
+
+.complaint-status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+}
+
+.complaint-status.open { background: #dc3545; }          /* red */
+.complaint-status.in-progress { background: #ffc107; color: #212529; } /* yellow */
+.complaint-status.resolved { background: #28a745; }     /* green */
+.complaint-status.closed { background: #6c757d; }       /* gray */
