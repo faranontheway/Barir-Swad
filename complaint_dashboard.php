@@ -55,7 +55,15 @@ $complaints = $stmt->get_result();
     <div class="nav">
         <div class="logo">🥘Barir Swad</div>
         <nav class="nav-links">
-            <a href="customer_dashboard.php" class="btn">Dashboard</a>
+            <?php if (isset($_SESSION['user_type'])): ?>
+                <?php if ($_SESSION['user_type'] === 'Cook'): ?>
+                    <a href="cook_dashboard.php" class="btn">Dashboard</a>
+                <?php elseif ($_SESSION['user_type'] === 'Customer'): ?>
+                    <a href="customer_dashboard.php" class="btn">Dashboard</a>
+                <?php elseif ($_SESSION['user_type'] === 'Admin'): ?>
+                    <a href="admin_dashboard.php" class="btn">Dashboard</a>
+                <?php endif; ?>
+            <?php endif; ?>
             <a href="logout.php" class="btn logout">Logout</a>
         </nav>
     </div>
@@ -75,7 +83,7 @@ $complaints = $stmt->get_result();
     <!-- Complaint List -->
     <div class="complaints-section">
         <div class="dashboard-header">
-            <h2>Recent Complaints and Notifications</h2>
+            <h2>Recent Complaints</h2>
             <a href="add_complaint.php" class="btn">➕ Add Complaint</a>
         </div>
 
@@ -83,7 +91,7 @@ $complaints = $stmt->get_result();
             <?php $serial = 1; ?>
             <?php while ($row = $complaints->fetch_assoc()): ?>
                 <div class="complaint-card">
-                    <h3>Complaint/Notifications #<?= $serial ?></h3>
+                    <h3>Complaint #<?= $serial ?></h3>
                     <div class="complaint-meta">
                         Submitted: <?= date("d M Y", strtotime($row['Submitted_Date'])) ?>
                     </div>

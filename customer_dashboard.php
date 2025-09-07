@@ -81,7 +81,7 @@ $popular_meals = $conn->query("
                 <a href="view_cart.php" class="cart-indicator">Cart</a>
                 <a href="customer_catering.php">Catering Services</a>
                 <a href="review.php">Write Review</a>
-                <a href="add_complaint.php">Complaints</a>
+                <a href="complaint_dashboard.php">Complaints</a>
                 <a href="customer_profile.php">Your Profile</a>
                     <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
                         <span class="cart-count"><?= count($_SESSION['cart']) ?></span>

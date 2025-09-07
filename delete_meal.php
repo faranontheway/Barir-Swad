@@ -20,6 +20,23 @@ if (isset($_GET['meal_id'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // Get the meal name to construct the image filename
+        $stmt = $conn->prepare("SELECT Name FROM meal WHERE Meal_ID = ?");
+        $stmt->bind_param("i", $meal_id);
+        $stmt->execute();
+        $meal_result = $stmt->get_result();
+        
+        if ($meal_result->num_rows > 0) {
+            $meal = $meal_result->fetch_assoc();
+            $image_name = strtolower(str_replace(' ', '-', $meal['Name'])) . '.jpg';
+            $image_path = $image_name; // Assuming images are stored in the same directory as add_meal.php
+
+            // Delete the image file if it exists
+            if (file_exists($image_path)) {
+                unlink($image_path);
+            }
+        }
+
         // Delete from meal table
         $stmt = $conn->prepare("DELETE FROM meal WHERE Meal_ID = ?");
         $stmt->bind_param("i", $meal_id);

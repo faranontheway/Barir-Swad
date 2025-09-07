@@ -1,9 +1,14 @@
 <?php
+// notification_system.php - Core notification functions (Updated for existing schema)
+
 function createNotification($conn, $user_id, $title, $message, $related_id = null) {
+    // Using complaint_support table structure for notifications
+    // Status: 'Open' = Unread, 'In Progress' = Read, 'Closed' = Dismissed
     $sql = "INSERT INTO complaint_support (User_ID, Complaint_ID, Description, Status, Submitted_Date, Messages) 
             VALUES (?, ?, ?, 'Open', CURDATE(), ?)";
     $stmt = $conn->prepare($sql);
-
+    
+    // Use a unique complaint_id for notifications (starting from 9000 to avoid conflicts)
     $notification_id = 9000 + rand(1, 9999);
     $description = "NOTIFICATION: " . $title;
     $full_message = json_encode(['title' => $title, 'message' => $message, 'related_id' => $related_id, 'type' => 'notification']);
@@ -73,6 +78,9 @@ function getUnreadNotificationCount($conn, $user_id) {
     $result = $stmt->get_result();
     return $result->fetch_assoc()['count'];
 }
+
+// Since we can't modify the orders table, we'll use a different approach for order assignment
+// We'll create a temporary tracking system using the complaint_support table
 
 function assignOrderToCook($conn, $order_id, $cook_id) {
     // Check if order is already assigned
@@ -177,5 +185,4 @@ function completeOrderAssignment($conn, $order_id, $cook_id) {
     $complete_stmt->bind_param("i", $cook_id);
     return $complete_stmt->execute();
 }
-
 ?>

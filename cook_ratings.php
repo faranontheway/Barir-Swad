@@ -66,6 +66,7 @@ if (isset($_GET['cook_id']) && is_numeric($_GET['cook_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $selected_cook ? htmlspecialchars($selected_cook['CookName']) . ' - Reviews' : 'Cook Ratings' ?> - Barir Swad</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookrating_styles.css">
 </head>
 <body>
     <header class="header">

@@ -1,10 +1,10 @@
 <?php
 session_start();
-require '../dbconnect.php';
+require 'dbconnect.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 $user_id = $_SESSION['user_id'];

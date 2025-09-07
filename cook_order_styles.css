@@ -1,0 +1,113 @@
+/* Complaint Card - Layout and hover effects */
+.complaint-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.complaint-card:hover {
+    transform: translateY(-3px);
+}
+
+.complaint-card.no-hover:hover {
+    transform: none;
+}
+
+.complaint-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Meta information styling */
+.complaint-meta {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Status badges for orders - Base style */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: default;
+    margin-right: 15px;
+}
+
+/* Specific status colors for orders */
+.status-pending {
+    background-color: #ffc107;
+    color: #212529; /* yellow */
+}
+
+.status-accepted {
+    background-color: #6f42c1; /* purple */
+}
+
+.status-on-the-way {
+    background-color: #fd7e14; /* orange */
+}
+
+.status-delivered {
+    background-color: #28a745; /* green */
+}
+
+.status-cancelled {
+    background-color: #dc3545; /* red */
+}
+
+/* Form in card - Ensure dropdown visibility and styling */
+.update-form {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.update-form select {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    min-width: 120px;
+    max-width: 150px;
+    appearance: auto; /* Revert to default browser styling for better cross-browser support */
+    -webkit-appearance: auto; /* Safari */
+    -moz-appearance: auto; /* Firefox */
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Button styles (for future use or existing form) */
+.update-form button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.update-form button:hover {
+    background: #0056b3;
+}

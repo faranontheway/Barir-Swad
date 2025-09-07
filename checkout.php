@@ -53,14 +53,14 @@ $order_info = json_encode([
     'meals' => $meal_list
 ]);
 
-// Send notification to each cook
-while ($cook = $cooks->fetch_assoc()) {
-    $complaint_id = rand(1000, 99999);
-    $notification_sql = "INSERT INTO complaint_support (User_ID, Complaint_ID, Description, Status, Submitted_Date, Messages) VALUES (?, ?, 'NEW_ORDER', 'Open', CURDATE(), ?)";
-    $stmt = $conn->prepare($notification_sql);
-    $stmt->bind_param("iis", $cook['U_ID'], $complaint_id, $order_info);
-    $stmt->execute();
-}
+// // Send notification to each cook
+// while ($cook = $cooks->fetch_assoc()) {
+//     $complaint_id = rand(1000, 99999);
+//     $notification_sql = "INSERT INTO complaint_support (User_ID, Complaint_ID, Description, Status, Submitted_Date, Messages) VALUES (?, ?, 'NEW_ORDER', 'Open', CURDATE(), ?)";
+//     $stmt = $conn->prepare($notification_sql);
+//     $stmt->bind_param("iis", $cook['U_ID'], $complaint_id, $order_info);
+//     $stmt->execute();
+// }
 
 
 // --- Insert meals into orders_have_meal

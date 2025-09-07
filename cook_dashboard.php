@@ -60,10 +60,9 @@ $stats['total_earned'] = $result->fetch_assoc()['total'] ?? 0;
     <div class="nav">
         <div class="logo">🥘Barir Swad</div>
         <nav class="nav-links">
-            <a class="btn" href="cook_dashboard.php">Dashboard</a>
+            <a class="btn" href="index.php">Home</a>
+            <a class="btn" href="cook_profile.php">My Profile</a>
             <a class="btn" href="complaint_dashboard.php">Complaint</a>
-            <a class="btn" href="cook_profile.php">Your Profile</a>
-            <a class="btn" href="cook_orders.php">Orders</a>
             <a href="logout.php" class="btn logout">Logout</a>
         </nav>
     </div>
@@ -74,7 +73,9 @@ $stats['total_earned'] = $result->fetch_assoc()['total'] ?? 0;
         <h1>Welcome back, <?= htmlspecialchars($cook_name) ?>!</h1>
         <p>Manage your meals and track orders.</p>
         <div class="quick-actions">
-            <a href="add_meal.php" class="btn">Add New Meal</a>
+            <a href="cook_orders.php" class="btn">Orders</a>
+            <a href="cook_reviews.php" class="btn">My Reviews</a>
+            <a href="add_meal.php" class="btn">Add Meal</a>
         </div>
     </div>
 
@@ -97,6 +98,9 @@ $stats['total_earned'] = $result->fetch_assoc()['total'] ?? 0;
         <?php if($meals->num_rows > 0): ?>
             <?php while($meal = $meals->fetch_assoc()): ?>
                 <div class="meal-card">
+                    <img src="<?= strtolower(str_replace(' ', '-', $meal['Name'])) ?>.jpg" 
+                         alt="<?= htmlspecialchars($meal['Name']) ?>" 
+                         class="meal-photo">
                     <h4><?= htmlspecialchars($meal['Name']) ?></h4>
                     <div class="meal-cuisine"><?= htmlspecialchars($meal['Cuisine']) ?></div>
                     <div class="meal-price">৳<?= number_format($meal['Pricing'],2) ?></div>

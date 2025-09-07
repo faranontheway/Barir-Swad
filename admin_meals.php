@@ -94,7 +94,7 @@ $cuisine_stats = $conn->query("
                 <a href="admin_orders.php">Orders</a>
                 <a href="admin_users.php">Users</a>
                 <a href="admin_meals.php" class="active">Meals</a>
-                <a href="admin_complaint_dashboard.php">Complaints</a>
+                <a href="admin_complaints.php">Complaints</a>
                 <a href="admin_logout.php" class="logout-btn">Logout</a>
             </nav>
         </div>

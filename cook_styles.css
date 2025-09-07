@@ -11,7 +11,7 @@ body {
 
 /* Header and navbar */
 .header {
-    background: #fff;
+    background: #953029;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 15px 0;
 }
@@ -25,11 +25,11 @@ body {
 }
 .logo {
     font-family: 'DynaPuff', cursive, sans-serif;
-    font-weight: 700;          /* bold but smooth */
+    font-weight: 700;
     font-size: 30px;
-    color: #953029;            /* peony color */
-    letter-spacing: 1px;       /* subtle spacing */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.15); /* soft depth */
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
 .nav-links {
@@ -45,9 +45,9 @@ body {
     transition: background 0.3s;
 }
 .nav-links a:hover { background: #f8f9fa; }
-.nav-links .btn { background: #953029; color: white; }
-.nav-links .btn:hover { background: #ce1e1e; }
-.nav-links .logout { background: #953029; }
+.nav-links .btn { background: #BA5448; color: white; }
+.nav-links .btn:hover { background: #a04439; }
+.nav-links .logout { background: #BA5448; }
 .nav-links .logout:hover { background: #ce1e1e; }
 
 /* Container for page content */
@@ -83,7 +83,12 @@ body {
 .btn:hover, button:hover { background: #ce1e1e; }
 
 /* Quick actions */
-.quick-actions { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 /* Stats grid */
 .stats-grid {
@@ -101,42 +106,89 @@ body {
     transition: transform 0.3s;
 }
 .stat-card:hover { transform: translateY(-5px); }
-.stat-card h3 { color: #140101; font-size: 15px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
+.stat-card h3 { color: #666; font-size: 15px; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
 .stat-card .number { font-size: 36px; font-weight: bold; color: #953029; }
 .stat-card.money .number { color: #02771d; }
 
 /* Meal grid */
 .meal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+    gap: 10px; /* Reduced gap for tighter packing */
+    margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+    .meal-grid {
+        grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    }
 }
 .meal-card {
     background: #FFF8EE;
     border: 1px solid #eee;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px; /* Reduced padding for tighter packing */
     text-align: center;
     transition: transform 0.3s;
 }
-.meal-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.meal-card h4 { color: #333; margin-bottom: 0px; font-size: 20px;}
-.meal-cuisine { background: #953029; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-bottom: 10px; display: inline-block; }
-.meal-price { color: #02771d; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
-
-/* Meal action buttons */
+.meal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.meal-photo {
+    width: 100%;
+    height: 200px; /* Matched to inferred index.php style */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 5px; /* Reduced margin for tighter packing */
+    border: 1px solid #ddd;
+}
+.meal-card h4 {
+    color: #333;
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.meal-cuisine {
+    background: #953029;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 5px 0;
+    display: inline-block;
+}
+.meal-price {
+    color: #02771d;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0;
+}
+.meal-description {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+    min-height: 40px;
+}
+.meal-actions {
+    margin-top: 5px; /* Reduced margin for tighter packing */
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
 .btn-action {
     background: #D6877F;
     color: white;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
-    margin: 3px;
+    margin: 0;
     display: inline-block;
 }
 .btn-action:hover { background: #ce1e1e; }
-.btn-delete { background: #dc3545; }
+.btn-delete {
+    background: #dc3545;
+}
 .btn-delete:hover { background: #ce1e1e; }
 
 /* Form styling */
@@ -146,9 +198,12 @@ input, textarea, select {
     margin: 8px 0;
     border-radius: 8px;
     border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
 }
 .message { text-align:center; margin-bottom:10px; color:green; }
-
 
 /* Form container (Add Meal, Edit Meal, etc.) */
 .form-container {
@@ -208,3 +263,14 @@ input, textarea, select {
 .complaint-status.in-progress { background: #ffc107; color: #212529; } /* yellow */
 .complaint-status.resolved { background: #28a745; }     /* green */
 .complaint-status.closed { background: #6c757d; }       /* gray */
+
+.success-message {
+    margin: 15px 0;
+    padding: 12px 18px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
