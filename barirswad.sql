@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2025 at 02:05 AM
+-- Generation Time: Sep 07, 2025 at 02:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -197,7 +197,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`OrderID`, `Customer_ID`, `Cost`, `Status`, `Date`) VALUES
-(6, 1004, 350.00, 'On the way', '2025-09-02'),
+(6, 1004, 350.00, 'Delivered', '2025-09-02'),
 (7, 1004, 100.00, 'Delivered', '2025-09-02'),
 (8, 1004, 300.00, 'Accepted', '2025-09-02'),
 (9, 1004, 300.00, 'Accepted', '2025-09-02'),
@@ -209,7 +209,8 @@ INSERT INTO `orders` (`OrderID`, `Customer_ID`, `Cost`, `Status`, `Date`) VALUES
 (15, 1005, 1200.00, 'Accepted', '2025-09-05'),
 (16, 1004, 240.00, 'Cancelled', '2025-09-07'),
 (17, 1004, 120.00, 'Accepted', '2025-09-07'),
-(18, 1004, 300.00, 'Accepted', '2025-09-07');
+(18, 1004, 300.00, 'Accepted', '2025-09-07'),
+(19, 1004, 150.00, 'Pending', '2025-09-07');
 
 -- --------------------------------------------------------
 
@@ -232,6 +233,7 @@ INSERT INTO `orders_have_meal` (`M_ID`, `OrderID`, `Quantity`, `Price`) VALUES
 (1, 6, 1, 150.00),
 (1, 11, 1, 150.00),
 (1, 12, 5, 150.00),
+(1, 19, 1, 150.00),
 (2, 6, 2, 100.00),
 (2, 7, 1, 100.00),
 (2, 10, 5, 100.00),
@@ -319,10 +321,14 @@ CREATE TABLE `user_cooks_meal` (
 
 INSERT INTO `user_cooks_meal` (`Cook_ID`, `Meal_ID`) VALUES
 (1, 2),
-(1, 3),
 (1, 5),
+(2, 1),
 (2, 3),
-(2, 6);
+(2, 4),
+(2, 6),
+(3, 7),
+(3, 8),
+(3, 9);
 
 -- --------------------------------------------------------
 
@@ -433,6 +439,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user_cooks_meal`
   ADD PRIMARY KEY (`Cook_ID`,`Meal_ID`),
+  ADD UNIQUE KEY `Meal_ID` (`Meal_ID`),
   ADD KEY `meal_cook_fk` (`Meal_ID`);
 
 --
@@ -480,7 +487,7 @@ ALTER TABLE `meal`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`
