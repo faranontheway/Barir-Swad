@@ -63,7 +63,7 @@ $stats['total_delivered'] = $conn->query("SELECT COUNT(*) as count FROM orders W
                 <a href="admin_delivery.php" class="active">Delivery</a>
                 <a href="admin_users.php">Users</a>
                 <a href="admin_meals.php">Meals</a>
-                <a href="admin_complaints.php">Complaints</a>
+                <a href="admin_complaint_dashboard.php">Complaints</a>
                 <a href="admin_logout.php" class="logout-btn">Logout</a>
             </div>
         </nav>
@@ -140,4 +140,5 @@ $stats['total_delivered'] = $conn->query("SELECT COUNT(*) as count FROM orders W
         </div>
     </div>
 </body>
+
 </html>
