@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="nav">
         <div class="logo">🥘Barir Swad</div>
         <nav class="nav-links">
-            <a href="../logout.php" class="btn logout">Logout</a>
+            <a href="logout.php" class="btn logout">Logout</a>
         </nav>
     </div>
 </header>
