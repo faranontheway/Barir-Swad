@@ -131,7 +131,6 @@ $phones = array_column($user_data, 'Phone_No') ?: []; // Extract phones, default
             <div class="logo">🥘Barir Swad</div>
             <nav class="nav-links">
                 <a href="cook_dashboard.php" class="btn">Dashboard</a>
-                <a href="cook_notifications.php" class="btn">Notifications</a>
                 <a href="cook_reviews.php" class="btn">My Reviews</a>
                 <a href="logout.php" class="btn logout">Logout</a>
             </nav>
