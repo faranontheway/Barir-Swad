@@ -26,6 +26,7 @@ if (!$result) {
     </div>
     <nav>
       <a href="login.php">Sign up</a>
+      <a href="cook_ratings.php">Cook Ratings</a>
       <a href="catering.php">Catering Services</a>
     </nav>
   </header>
