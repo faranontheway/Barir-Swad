@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'Admin') {
 
 // Get the complaint ID
 if (!isset($_GET['id'])) {
-    header("Location: admin_complaints.php");
+    header("Location: admin_complaint_dashboard.php");
     exit();
 }
 $complaint_id = intval($_GET['id']);
