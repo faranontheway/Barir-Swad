@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #F7DACF 0%, #D6877F 50%, #BA5448 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(149, 48, 41, 0.15);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #F7DACF; /* peony */
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    background: #F7DACF; /* peony */
+    padding: 5px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #953029; /* hibiscus */
+    font-weight: 600;
+}
+
+.tab.active {
+    background: #953029; /* hibiscus */
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(149, 48, 41, 0.25);
+}
+
+.tab:hover:not(.active) {
+    background: #E2A48A; /* desert rose */
+    color: #953029; /* hibiscus */
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #953029; /* hibiscus */
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #953029; /* hibiscus */
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #F7DACF; /* peony */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: #FFF8EE; /* lily */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #D6877F; /* rosewood */
+    background: white;
+    box-shadow: 0 0 0 3px rgba(214, 135, 127, 0.15);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #953029; /* hibiscus */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #7a2621;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(149, 48, 41, 0.3);
+}
+
+.message {
+    background: #F7DACF; /* peony */
+    color: #953029; /* hibiscus */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 2px solid #D6877F; /* rosewood */
+    font-weight: 500;
+}
+
+.links {
+    text-align: center;
+    margin-top: 25px;
+    padding: 20px;
+    background: #FFF8EE; /* lily */
+    border-radius: 10px;
+    border: 1px solid #F7DACF; /* peony */
+}
+
+.links a {
+    color: #953029; /* hibiscus */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.links a:hover {
+    background: #F7DACF; /* peony */
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Logo/Brand section */
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand h1 {
+    font-family: 'DynaPuff', cursive, Arial, sans-serif;
+    color: #953029; /* hibiscus */
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.brand p {
+    color: #BA5448; /* dahlia */
+    font-size: 14px;
+}
+
+/* Additional form elements */
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    accent-color: #953029; /* hibiscus */
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #BA5448; /* dahlia */
+}
+
+/* Success message variant */
+.message.success {
+    background: #FFF8EE; /* lily */
+    color: #953029; /* hibiscus */
+    border-color: #BA5448; /* dahlia */
+}
+
+/* Loading state */
+.btn:disabled {
+    background: #E2A48A; /* desert rose */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 25px;
+        max-width: 350px;
+    }
+    
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .tab {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-section.active {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Focus indicators for accessibility */
+.tab:focus {
+    outline: 2px solid #D6877F; /* rosewood */
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #D6877F; /* rosewood */
+    outline-offset: 2px;
+}

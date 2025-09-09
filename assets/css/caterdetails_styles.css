@@ -1,0 +1,172 @@
+ .admin-header {
+            background: #ff9a56;
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .catering-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .main-details {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .side-info {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .detail-row {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .detail-label {
+            font-weight: bold;
+            width: 150px;
+            color: #333;
+        }
+        .detail-value {
+            flex: 1;
+            color: #666;
+        }
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-badge.pending { background: #ffc107; color: #212529; }
+        .status-badge.confirmed { background: #28a745; color: white; }
+        .status-badge.in-progress { background: #17a2b8; color: white; }
+        .status-badge.completed { background: #6f42c1; color: white; }
+        .status-badge.cancelled { background: #dc3545; color: white; }
+        .payment-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .payment-badge.pending { background: #ffc107; color: #212529; }
+        .payment-badge.partial { background: #17a2b8; color: white; }
+        .payment-badge.full { background: #28a745; color: white; }
+        .meals-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .meal-assignment-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 10px;
+            align-items: end;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group select, .form-group input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .assigned-meals-table {
+            margin-top: 20px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .btn-primary { background: #007bff; color: white; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn:hover { opacity: 0.8; }
+        .cost-summary {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .cost-summary h4 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background: #c82333;
+        }
+        .message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
